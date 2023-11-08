@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.composequadrant"
+    namespace = "com.example.businesscard"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.composequadrant"
+        applicationId = "com.example.businesscard"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
