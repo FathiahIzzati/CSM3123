@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.taskcompleted"
+    namespace = "com.example.composequadrant"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.taskcompleted"
+        applicationId = "com.example.composequadrant"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
