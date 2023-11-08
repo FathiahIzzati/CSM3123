@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.greetingcard"
+    namespace = "com.example.happybirthday"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.greetingcard"
+        applicationId = "com.example.happybirthday"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
