@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.composearticle"
+    namespace = "com.example.taskcompleted"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.composearticle"
+        applicationId = "com.example.taskcompleted"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
