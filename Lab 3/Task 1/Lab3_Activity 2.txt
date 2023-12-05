@@ -1,0 +1,85 @@
+//Activity 2
+//Output in lab report
+
+// use if/else
+Red color
+
+fun main() {
+    val trafficLightColor = "Red"
+
+    if (trafficLightColor == "Red") {
+        println("Stop")
+    } else {
+	println("Go")
+    }
+}
+
+Yellow color
+
+fun main() {
+    val trafficLightColor = "Yellow"
+
+    if (trafficLightColor == "Red") {
+        println("Stop")
+    } else if (trafficLightColor == "Yellow") {
+	    println("Slow")
+    } else {
+        println("Go")
+    }
+}
+
+Green color
+fun main() {
+    val trafficLightColor = "Green"
+
+    if (trafficLightColor == "Red") {
+        println("Stop")
+    } else if (trafficLightColor == "Yellow") {
+	    println("Slow")
+    } else if (trafficLightColor == "Green") {
+        println("Go")
+    } else {
+        println("Invalid traffic-light color")
+    }
+}
+
+what if we put black color
+
+fun main() {
+    val trafficLightColor = "Black"
+    
+    if (trafficLightColor == "Red") {
+        println("Stop")
+    } else if (trafficLightColor == "Yellow") {
+	    println("Slow")
+    } else if (trafficLightColor == "Green") {
+        println("Go")
+    } else {
+        println("Invalid traffic-light color")
+    }
+}
+
+//use when statement
+fun main() {
+    val trafficLightColor = "Yellow"
+
+    when (trafficLightColor) {
+        "Red" -> println("Stop")
+        "Yellow" -> println("Slow")
+        "Green" -> println("Go")
+        else -> println("Invalid traffic-light color")
+    }
+}
+
+// more complex in a when statement
+fun main() {
+    val x = 3
+    
+    when (x) {
+        2 -> println("x is a prime number between 1 and 10.")
+        3 -> println("x is a prime number between 1 and 10.")
+        5 -> println("x is a prime number between 1 and 10.")
+        7 -> println("x is a prime number between 1 and 10.")
+        else -> println("x isn't a prime number between 1 and 10.")
+    }
+}
