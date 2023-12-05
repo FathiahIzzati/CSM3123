@@ -1,0 +1,575 @@
+//Task 2 - KOTLIN
+//use enum constant
+enum class Difficulty {
+    EASY, MEDIUM, HARD
+}
+class Question<T>(
+    val questionText: String,
+    val answer: T,
+    val difficulty: Difficulty
+)
+fun main() {
+    val question1 = Question<String>("Quoth the raven ___", "nevermore", Difficulty.MEDIUM)
+    val question2 = Question<Boolean>("The sky is green. True or false", false, Difficulty.EASY)
+    val question3 = Question<Int>("How many days are there between full moons?", 28, Difficulty.HARD)
+    println(question1.toString())
+}
+
+//convert question to a data class
+enum class Difficulty {
+    EASY, MEDIUM, HARD
+}
+data class Question<T>(
+    val questionText: String,
+    val answer: T,
+    val difficulty: Difficulty
+)
+fun main() {
+    val question1 = Question<String>("Quoth the raven ___", "nevermore", Difficulty.MEDIUM)
+    val question2 = Question<Boolean>("The sky is green. True or false", false, Difficulty.EASY)
+    val question3 = Question<Int>("How many days are there between full moons?", 28, Difficulty.HARD)
+    println(question1.toString())
+}
+
+enum class Difficulty {
+    EASY, MEDIUM, HARD
+}
+class Question<T>(val text: String, val answer: T, val difficulty: Difficulty)
+class Quiz {
+    val question1 = Question<String>("Quoth the raven ___", "nevermore", Difficulty.MEDIUM)
+    val question2 = Question<Boolean>("The sky is green. True or false", false, Difficulty.EASY)
+    val question3 = Question<Int>("How many days are there between full moons?", 28, Difficulty.HARD)
+    fun printQuiz() {
+	question1.let {
+	    println(it.text)
+	    println(it.answer)
+	    println(it.difficulty)
+	}
+	println()
+	question2.let {
+	    println(it.text)
+	    println(it.answer)
+	    println(it.difficulty)
+	}
+	println()
+	question3.let {
+	    println(it.text)
+	    println(it.answer)
+	    println(it.difficulty)
+	}
+	println()
+     }
+}
+fun main() {
+    val quiz = Quiz()
+    quiz.printQuiz()
+}
+
+//forEach()
+class Cookie(
+   val name: String,
+   val softBaked: Boolean,
+   val hasFilling: Boolean,
+   val price: Double
+)
+
+val cookies = listOf(
+    Cookie(
+	name = "Chocolate Chip",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.69
+    ),
+    Cookie(
+	name = "Banana Walnut",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Vanilla Creme",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.59
+    ),
+    Cookie(
+	name = "Chocolate Peanut Butter",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Snickerdoodle",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.39
+    ),
+    Cookie(
+	name = "Blueberry Tart",
+	softBaked = true,
+	hasFilling = true,
+	price = 1.79
+    ),
+    Cookie(
+	name = "Sugar and Sprinkles",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.39
+    )
+)
+
+fun main() {
+    cookies.forEach {
+	println("Menu item: $it")
+    }
+}
+
+//forEach()_2
+class Cookie(
+   val name: String,
+   val softBaked: Boolean,
+   val hasFilling: Boolean,
+   val price: Double
+)
+
+val cookies = listOf(
+    Cookie(
+	name = "Chocolate Chip",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.69
+    ),
+    Cookie(
+	name = "Banana Walnut",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Vanilla Creme",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.59
+    ),
+    Cookie(
+	name = "Chocolate Peanut Butter",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Snickerdoodle",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.39
+    ),
+    Cookie(
+	name = "Blueberry Tart",
+	softBaked = true,
+	hasFilling = true,
+	price = 1.79
+    ),
+    Cookie(
+	name = "Sugar and Sprinkles",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.39
+    )
+)
+
+fun main() {
+    cookies.forEach {
+	println("Menu item: ${it.name}")
+    }
+}
+
+//map()
+class Cookie(
+   val name: String,
+   val softBaked: Boolean,
+   val hasFilling: Boolean,
+   val price: Double
+)
+
+fun main() {
+val cookies = listOf(
+    Cookie(
+	name = "Chocolate Chip",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.69
+    ),
+    Cookie(
+	name = "Banana Walnut",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Vanilla Creme",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.59
+    ),
+    Cookie(
+	name = "Chocolate Peanut Butter",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Snickerdoodle",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.39
+    ),
+    Cookie(
+	name = "Blueberry Tart",
+	softBaked = true,
+	hasFilling = true,
+	price = 1.79
+    ),
+    Cookie(
+	name = "Sugar and Sprinkles",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.39
+    )
+)
+
+val fullMenu = cookies.map {
+	"${it.name} - $${it.price}"
+}
+
+println("Full menu:")
+fullMenu.forEach {
+    println(it)
+ }
+}
+
+//filter()
+class Cookie(
+   val name: String,
+   val softBaked: Boolean,
+   val hasFilling: Boolean,
+   val price: Double
+)
+
+fun main() {
+val cookies = listOf(
+    Cookie(
+	name = "Chocolate Chip",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.69
+    ),
+    Cookie(
+	name = "Banana Walnut",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Vanilla Creme",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.59
+    ),
+    Cookie(
+	name = "Chocolate Peanut Butter",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Snickerdoodle",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.39
+    ),
+    Cookie(
+	name = "Blueberry Tart",
+	softBaked = true,
+	hasFilling = true,
+	price = 1.79
+    ),
+    Cookie(
+	name = "Sugar and Sprinkles",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.39
+    )
+)
+
+val softBakedMenu = cookies.filter {
+	it.softBaked
+}
+
+println("Soft cookies:")
+softBakedMenu.forEach {
+    println("${it.name} - $${it.price}")
+ }
+}
+
+//groupBy()
+class Cookie(
+   val name: String,
+   val softBaked: Boolean,
+   val hasFilling: Boolean,
+   val price: Double
+)
+
+fun main() {
+val cookies = listOf(
+    Cookie(
+	name = "Chocolate Chip",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.69
+    ),
+    Cookie(
+	name = "Banana Walnut",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Vanilla Creme",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.59
+    ),
+    Cookie(
+	name = "Chocolate Peanut Butter",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Snickerdoodle",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.39
+    ),
+    Cookie(
+	name = "Blueberry Tart",
+	softBaked = true,
+	hasFilling = true,
+	price = 1.79
+    ),
+    Cookie(
+	name = "Sugar and Sprinkles",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.39
+    )
+)
+val groupedMenu = cookies.groupBy {it.softBaked}
+val softBakedMenu = groupedMenu[true] ?; listOf()
+val crunchyMenu = groupedMenu[false] ?; listOf()
+
+println("Soft cookies:")
+softBakedMenu.forEach {
+    println("${it.name} - $${it.price}")
+}
+println("Crunchy cookies:")
+crunchyMenu.forEach {
+    println("${it.name} - $${it.price}")
+  }
+}
+
+//fold()
+class Cookie(
+   val name: String,
+   val softBaked: Boolean,
+   val hasFilling: Boolean,
+   val price: Double
+)
+
+fun main() {
+val cookies = listOf(
+    Cookie(
+	name = "Chocolate Chip",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.69
+    ),
+    Cookie(
+	name = "Banana Walnut",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Vanilla Creme",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.59
+    ),
+    Cookie(
+	name = "Chocolate Peanut Butter",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Snickerdoodle",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.39
+    ),
+    Cookie(
+	name = "Blueberry Tart",
+	softBaked = true,
+	hasFilling = true,
+	price = 1.79
+    ),
+    Cookie(
+	name = "Sugar and Sprinkles",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.39
+    )
+)
+  val totalPrice = cookies.fold(0.0) { total, cookie ->
+     total + cookie.price
+ }
+
+  println("Total price: $${totalPrice}")
+}
+
+//sortedBy()
+class Cookie(
+   val name: String,
+   val softBaked: Boolean,
+   val hasFilling: Boolean,
+   val price: Double
+)
+
+fun main() {
+val cookies = listOf(
+    Cookie(
+	name = "Chocolate Chip",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.69
+    ),
+    Cookie(
+	name = "Banana Walnut",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Vanilla Creme",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.59
+    ),
+    Cookie(
+	name = "Chocolate Peanut Butter",
+	softBaked = false,
+	hasFilling = true,
+	price = 1.49
+    ),
+    Cookie(
+	name = "Snickerdoodle",
+	softBaked = true,
+	hasFilling = false,
+	price = 1.39
+    ),
+    Cookie(
+	name = "Blueberry Tart",
+	softBaked = true,
+	hasFilling = true,
+	price = 1.79
+    ),
+    Cookie(
+	name = "Sugar and Sprinkles",
+	softBaked = false,
+	hasFilling = false,
+	price = 1.39
+    )
+ )
+ val alphabeticalMenu = cookies.sortedBy {
+     it.name
+ }
+ println("Alphabetical menu:")
+ alphabeticalMenu.forEach {
+     println(it.name)
+ }
+}
+
+//Event
+data class Event(
+   val title: String,
+   val description: String? = null,
+   val daypart: String,
+   val durationInMinutes: Int
+)
+
+fun main() {
+    val studyEvent = Event(
+        title: "Study Kotlin",
+        description = "Commit to studying Kotlin at least 15 minutes per day.",
+        daypart = "Evening",
+        durationInMinutes = 15
+    )
+    println(studyEvent)
+}
+
+//daypart
+enum class Daypart {
+    MORNING,
+    AFTERNOON,
+    EVENING,
+}
+
+data class Event(
+   val title: String,
+   val description: String? = null,
+   val daypart: Daypart,
+   val durationInMinutes: Int
+)
+
+fun main() {
+    val studyEvent = Event(
+        title: "Study Kotlin",
+        description = "Commit to studying Kotlin at least 15 minutes per day.",
+        daypart = "Evening",
+        durationInMinutes = 15
+    )
+    println(studyEvent)
+}
+
+//daypart_2
+enum class Daypart {
+    MORNING,
+    AFTERNOON,
+    EVENING,
+}
+
+data class Event(
+   val title: String,
+   val description: String? = null,
+   val daypart: Daypart,
+   val durationInMinutes: Int
+)
+
+fun main() {
+    val event1 = Event(title = "Wake up", description = "Time to get up", daypart = Daypart.MORNING, durationInMinutes = 0)
+    val event2 = Event(title = "Eat breakfast", daypart = Daypart.MORNING, durationInMinutes = 15)
+    val event3 = Event(title = "Learn about Kotlin", daypart = Daypart.AFTERNOON, durationInMinutes = 30)
+    val event4 = Event(title = "Practice Compose", daypart = Daypart.AFTERNOON, durationInMinutes = 60)
+    val event5 = Event(title = "Watch latest DevBytes video", daypart = Daypart.AFTERNOON, durationInMinutes = 10)
+    val event6 = Event(title = "Check out latest Android Jetpack library", daypart = Daypart.EVENING, durationInMinutes = 45)
+    val events = mutableListOf(event1, event2, event3, event4, event5, event6)
+
+    events.forEachIndexed { index, event ->
+        println("Event ${index + 1}:")
+        println("Title: ${event.title}")
+        println("Description: ${event.description ?: "No description"}")
+        println("Daypart: ${event.daypart}")
+        println("Duration: ${event.durationInMinutes} minutes")
+        println()
+}
