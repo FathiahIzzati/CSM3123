@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Mind Sharpener</string>
+    <string name="i3">i3</string>
+    <string name="i5">i5</string>
+    <string name="instructions">Instructions:</string>
+    <string name="this_is_simple_mathematics_games_which_is_believed_can_train_your_brain_two_numbers_are_given_randomly_based_on_your_level_choice_together_with_the_operator_you_just_need_to_calculates_the_answer_write_your_answer_and_press_check_button_every_correct_answer_will_give_you_1_point_while_wrong_answer_will_deduct_1_point">This is simple mathematics games which is believed can train your brain. Two numbers are given randomly based on your level choice together with the operator. You just need to calculates the answer, write your answer and press check button.Every correct answer will give you 1 point while wrong answer will deduct 1 point.</string>
+    <string name="choose_level">Choose level:</string>
+    <string name="_1">1</string>
+</resources>
