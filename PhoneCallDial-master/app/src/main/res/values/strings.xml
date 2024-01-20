@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Phone Call Dial</string>
+    <string name="contact">Jane Doe</string>
+    <string name="make_a_call">Make a call</string>
+    <string name="phone_number">14155551212</string>
+    <string name="dial_number">"Phone Status: DIALING: "</string>
+    <string name="enter_phone" />
+    <string name="retry" />
+    <string name="telephony_enabled" />
+    <string name="telephony_not_enabled" />
+    <string name="permission_not_granted" />
+    <string name="failure_permission" />
+    <string name="phone_status" />
+    <string name="ringing" />
+    <string name="offhook" />
+    <string name="idle" />
+    <string name="restarting_app" />
+    <string name="phone_disabled" />
+</resources>
